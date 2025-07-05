@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <form method="post" action="http://localhost:3000/api/product/add" enctype="multipart/form-data">
+
+
+
+
+
+          <div>
+            <label for=" image">title </label>
+            <input name="title" type="text" />
+        </div>
+        
+         <div>
+            <label for="description">description </label>
+            <input name="description" type="text" />
+        </div>
+        <div>
+            <label for="description">price </label>
+            <input name="price" type="number" />
+        </div>
+        <div>
+            <label for="description">qty</label>
+            <input name="qty" type="number" />
+        </div>
+
+
+
+          <div>
+            <label for=" image">upload Image </label>
+            <input name="image" type="file" />
+        </div>
+        <button>add</button>
+     </form>
+</body>
+</html>

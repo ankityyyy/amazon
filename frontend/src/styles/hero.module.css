@@ -1,0 +1,26 @@
+.heroimage{
+    background-image: url(' /image/hero_image.jpg');
+    background-size: cover;
+   
+  /* background-repeat: no-repeat;
+  background-position: center; */
+    height:25rem;
+    display: flex;
+    align-items: end;
+    margin-bottom: 4rem;
+   
+}
+
+.heromes{
+    background-color: #fff;
+    height: 40PX;
+    width: 80%;
+    position: relative;
+    bottom: 30px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10%;
+    
+}

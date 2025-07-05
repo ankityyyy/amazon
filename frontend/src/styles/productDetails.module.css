@@ -1,0 +1,166 @@
+.detailsContainer {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.backBtn {
+  background-color: #f0c14b;
+  color: #111;
+  border: 1px solid #a88734;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.image {
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.price {
+  font-size: 22px;
+  color: #b12704;
+  margin-bottom: 10px;
+}
+
+.qty {
+  font-size: 16px;
+  color: green;
+  margin-bottom: 5px;
+}
+
+.category {
+  font-size: 14px;
+  color: #555;
+}
+
+.loading {
+  text-align: center;
+  font-size: 18px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+.btnGroup {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.buy {
+  background-color: #ffa41c;
+  color: #fff;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.buy:hover {
+  background-color: #f08804;
+}
+
+.editBtn, .deleteBtn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.editBtn {
+  background-color: #0073e6;
+  color: #fff;
+}
+
+.editBtn:hover {
+  background-color: #005bb5;
+}
+
+.deleteBtn {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.deleteBtn:hover {
+  background-color: #c9302c;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+
+.commentWrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  padding: 6px;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  color: #444;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.icon:hover {
+  background-color: #e0e0e0;
+}
+
+.cartBtn{
+ 
+}
