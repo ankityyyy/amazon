@@ -4,7 +4,7 @@ import Hero from './components/Hero.jsx'
 import Product from './components/Product.jsx'
 import ProductList from './components/ProductList.jsx'
 import store from './redux/app/Store.jsx';
-import Login from './components/Login.jsx'
+import SignUp from './components/SignUp.jsx'
 import Cart from './components/Cart.jsx'
 import OrderPage from './components/OrderPage.jsx'
 import { Provider } from 'react-redux'
@@ -27,7 +27,7 @@ function App() {
               <>
                 <NavBar />
                  <Panel />
-               <Login/>
+               <SignUp/>
                <Footer/>
               </>
             } 
