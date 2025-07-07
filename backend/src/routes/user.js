@@ -51,18 +51,15 @@ router.get("/auth/google", passport.authenticate("google", {
 
 router.get("/auth/google/callback",
   passport.authenticate("google", {
-    failureRedirect: "/login"
+    failureRedirect: "/login-failure",
   }),
   (req, res) => {
-    // This runs **only** after successful authentication
-    res.redirect("/profile");
+    res.redirect("http://localhost:5173/"); 
   }
 );
 
 
-router.get("/profile",(req,res)=>{
-     res.send(req?.user)
-})
+
 
 
 
