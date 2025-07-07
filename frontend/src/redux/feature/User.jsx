@@ -4,6 +4,23 @@ let server = "http://localhost:5000";
 
 axios.defaults.withCredentials = true;
 
+export const Signup=createAsyncThunk("auth/SignUpUser",async({email, password,number},thunkAPI)=>{
+  try {
+    const response = await axios.post(`${server}/register`,{ email, password,phone:number },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          withCredentials: true, 
+        }
+      );
+      return response.data;
+    
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data);
+  }
+})
+
 
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
@@ -52,6 +69,20 @@ const authSlice = createSlice({
         state.message = action.payload.message || "Login successful.";
       })
       .addCase(loginUser.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload.message || "Login failed.";
+      })
+      .addCase(Signup.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+        state.message = "Logging in...";
+      })
+      .addCase(Signup.fulfilled, (state, action) => {
+        state.loading = false;
+        state.user = action.payload.user;
+        state.message = action.payload.message || "Login successful.";
+      })
+      .addCase(Signup.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload.message || "Login failed.";
       });
