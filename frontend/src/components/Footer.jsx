@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light pt-4" >
+    <footer className="bg-dark text-light pt-4 position-relative" style={{top:"200px"}} >
       {/* Back to Top */}
       <div className="text-center py-3 border-bottom border-secondary" style={{backgroundColor:"#37475a",position:"relative",bottom:"24px"}}>
         <a href="#top" className="text-light text-decoration-none">Back to Top</a>
