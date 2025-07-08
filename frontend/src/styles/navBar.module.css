@@ -114,4 +114,7 @@
 .navcart p{
     font-size: 1.3rem;
     color: #fff;
+     position: relative;
+    top: 11px;
+    
 }
