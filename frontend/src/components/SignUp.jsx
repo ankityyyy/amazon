@@ -1,4 +1,4 @@
-import { loginUser, Signup } from "../redux/feature/User";
+import {  Signup } from "../redux/feature/User";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Spinner from "./Spinner.jsx";
@@ -24,6 +24,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     dispatch(Signup(formData))
       .unwrap()
       .then((res) => {
