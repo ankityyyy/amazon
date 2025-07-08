@@ -5,6 +5,7 @@ import Product from './components/Product.jsx'
 import ProductList from './components/ProductList.jsx'
 import store from './redux/app/Store.jsx';
 import SignUp from './components/SignUp.jsx'
+import Login from './components/Login.jsx'
 import Cart from './components/Cart.jsx'
 import OrderPage from './components/OrderPage.jsx'
 import { Provider } from 'react-redux'
@@ -32,6 +33,19 @@ function App() {
               </>
             } 
           />
+
+           <Route 
+            path="/login" 
+            element={
+              <>
+                <NavBar />
+                 <Panel />
+               <Login/>
+               <Footer/>
+              </>
+            } 
+          />
+
           <Route 
             path="/" 
             element={
