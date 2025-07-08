@@ -22,7 +22,7 @@ function App() {
       
        <Routes>
         <Route 
-            path="/login" 
+            path="/signup" 
             element={
               <>
                 <NavBar />
