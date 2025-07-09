@@ -14,13 +14,10 @@ const upload = multer({ storage});
 
 router.get('/', allProduct);
 
-router.get('/:id', wrapAsync(showProduct));//isLogin
+router.get('/:id',isLogin, wrapAsync(showProduct));
 
  router.post("/add",upload.single("image"), isLogin,roleMiddleware("admin", "seller"),validate(productSchema), wrapAsync(createdPost));
-
-
-
-
+ 
 router.put("/update/:id",isLogin, roleMiddleware("admin", "seller"),checkProductOwner,validate(productSchema), wrapAsync(updateProduct));
 
 router.delete("/delete/:id", isLogin, roleMiddleware("admin", "seller"), checkProductOwner, wrapAsync(deleteProduct));
