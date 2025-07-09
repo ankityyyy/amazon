@@ -46,18 +46,18 @@ app.use(
   })
 );
 
+const isProduction = process.env.NODE_ENV === "production";
 
 const sessionOption = {
   secret: "gsjghdshs",
   resave: false,
- saveUninitialized: false,
+  saveUninitialized: false,
   cookie: {
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    sameSite: "none",  
-  secure: true    
-  },
+    sameSite: isProduction ? "none" : "lax",
+    secure: isProduction,
+    maxAge: 7 * 24 * 60 * 60 * 1000
+  }
 };
 
 app.use(session(sessionOption));
@@ -78,7 +78,8 @@ passport.deserializeUser(User.deserializeUser());
 passport.use(new GoogleStrategy({
   clientID: process.env.GOOGLE_CLIENT_ID,
   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:5000/auth/google/callback"
+  callbackURL:process.env.GOOGLE_CALLBACK_URL
+
 },
 async (accessToken, refreshToken, profile, done) => {
   try {
