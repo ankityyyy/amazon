@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-let server = "http://localhost:5000";
-
+import server from "../../env";
 axios.defaults.withCredentials = true;
 
 export const Signup=createAsyncThunk("auth/SignUpUser",async({email, password,number},thunkAPI)=>{

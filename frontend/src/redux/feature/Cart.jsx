@@ -1,13 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-let server = "http://localhost:5000/api/v1/cart";
-let server2="http://localhost:5000/api/v1/order";
+import server from "../../env";
 
 export const addProductToCart = createAsyncThunk(
   "cart/productAddtocart",
   async ({ id, qty }, thunkAPI) => {
     try {
-      let response = await axios.post(`${server}/new/${id}`, { qty });
+      let response = await axios.post(`${server}/api/v1/cart/new/${id}`, { qty });
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(
@@ -21,7 +20,7 @@ export const getAllCartProduct = createAsyncThunk(
   "cart/getAllCartProduct",
   async (_, thunkAPI) => {
     try {
-      let response = await axios.get(`${server}`);
+      let response = await axios.get(`${server}/api/v1/cart`);
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(
@@ -35,7 +34,7 @@ export const deleteProductFromCart = createAsyncThunk(
   "cart/deleteProductFromCart",
   async (id, thunkAPI) => {
     try {
-      let response = await axios.delete(`${server}/delete/${id}`);
+      let response = await axios.delete(`${server}/api/v1/cart/delete/${id}`);
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(
@@ -50,7 +49,7 @@ export const placeOrder = createAsyncThunk(
   async (items, thunkAPI) => {
     try {
       const response = await axios.post(
-        `${server2}`,
+        `${server}/api/v1/order`,
         { items },
         { withCredentials: true }
       );
@@ -68,7 +67,7 @@ export const getAllPlaceOrder = createAsyncThunk(
   "order/getAllPlaceOrder",
   async (_, thunkAPI) => {
     try {
-      let response = await axios.get(`${server2}`,);
+      let response = await axios.get(`${server}/api/v1/order`,);
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
       return thunkAPI.rejectWithValue(

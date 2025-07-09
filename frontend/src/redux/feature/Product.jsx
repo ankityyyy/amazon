@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-let server = "http://localhost:5000/api/v1/product";
+import server from "../../env";
 
 export const getAllProduct = createAsyncThunk(
   "product/getAllProduct",
   async (_, thunkAPI) => {
     try {
-      let response = await axios.get(`${server}`);
+      let response = await axios.get(`${server}/api/v1/product`);
 
       return thunkAPI.fulfillWithValue(response.data);
     } catch (error) {
@@ -19,7 +19,7 @@ export const getAllProduct = createAsyncThunk(
 
 export const getProductById=createAsyncThunk( "product/getProductById",async(id,thunkAPI)=>{
   try {
-    let response=await axios.get(`${server}/${id}`)
+    let response=await axios.get(`${server}/api/v1/product/${id}`,{withCredentials: true})
     
      return thunkAPI.fulfillWithValue(response.data);
   } catch (error) {
@@ -34,7 +34,7 @@ export const updateProductData = createAsyncThunk(
   "product/updateProductData",
   async ({ id, product }, thunkAPI) => {
     try {
-      const response = await axios.put(`${server}/update/${id}`, {
+      const response = await axios.put(`${server}/api/v1/product/update/${id}`, {
         ...product,
       });
       return response.data;
@@ -49,7 +49,7 @@ export const updateProductData = createAsyncThunk(
 export const deleteProduct=createAsyncThunk("product/delete",async({id},thunkAPI)=>{
 
   try {
-     const response = await axios.delete(`${server}/delete/${id}`,{ withCredentials: true,})
+     const response = await axios.delete(`${server}/api/v1/product/delete/${id}`,{ withCredentials: true,})
     
       return response.data;
     
