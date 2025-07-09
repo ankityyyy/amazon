@@ -14,7 +14,8 @@ import reviewRouter from "./routes/review.js"
 import cartRouter from "./routes/cart.js";
 import orderRouter from './routes/order.js';
 import  ExpressError from "./util/ExpressError.js"
-let dbUrl="mongodb://127.0.0.1:27017/amazon"
+// let dbUrl="mongodb://127.0.0.1:27017/amazon"
+const dbUrl = process.env.ATLASDB_URL;    
 import {StatusCodes} from "http-status-codes"
 import cors from 'cors';
 import path from "path";
