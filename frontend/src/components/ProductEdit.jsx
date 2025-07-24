@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductById, updateProductData } from "../redux/feature/Product.jsx";
 import { useParams, useNavigate } from "react-router-dom";
-import styles from "../styles/productEdit.module.css";
+import styles from "../styles/ProductEdit.module.css";
 import Spinner from "./Spinner.jsx";
 
 function ProductEdit() {
