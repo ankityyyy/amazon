@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
  dotenv.config();
  import { User } from "./models/user.js";
  import passport from "passport";
-import session from "express-session";
+import session from "express-session"; 
 import { Strategy as LocalStrategy } from "passport-local";
 import { router } from './routes/user.js';
 import productRouter from "./routes/product.js"

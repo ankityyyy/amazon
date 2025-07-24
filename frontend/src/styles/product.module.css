@@ -21,6 +21,11 @@ width: 23%;
   bottom:55px;
 }
 
+.productSpinner{
+  position: relative;
+  left:700px;
+}
+
 .productCard {
   background: white;
   border: 1px solid #ddd;

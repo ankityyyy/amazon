@@ -64,8 +64,12 @@ const {product,loading} = useSelector((state) => state.product);
   
 
   return (
+    <>
+    <div className={styles.productSpinner}>{loading && <Spinner/>}</div>
+    
    <div className={styles.productGrid}>
-  {loading && <Spinner/>}
+    
+  
 
   {product && product.map((item) => (
     <div className={styles.productCard} key={item._id}>
@@ -81,6 +85,7 @@ const {product,loading} = useSelector((state) => state.product);
     </div>
   ))}
 </div>
+</>
   );
 }
 

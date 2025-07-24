@@ -20,7 +20,7 @@ const checkProductOwner = async (req, res, next) => {
       return next(
         new ExpressError(
           "You are not authorized to update this product",
-          StatusCodes.FORBIDDEN
+          StatusCodes.FORBIDDEN 
         )
       );
     }

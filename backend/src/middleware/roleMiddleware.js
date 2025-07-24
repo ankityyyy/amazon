@@ -5,6 +5,7 @@ import { StatusCodes } from "http-status-codes";
 
 
 const isLogin=(req,res,next)=>{
+  console.log(req.user)
   
     if(!req.isAuthenticated()){
         return next(new ExpressError("User not authenticated........ ", StatusCodes.UNAUTHORIZED));
