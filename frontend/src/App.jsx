@@ -1,4 +1,4 @@
-import NavBar from './components/navBar.jsx'
+import NavBar from './components/NavBar.jsx'
 import Panel from './components/Panel.jsx'
 import Hero from './components/Hero.jsx'
 import Product from './components/Product.jsx'
