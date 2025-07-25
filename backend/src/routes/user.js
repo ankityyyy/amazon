@@ -54,7 +54,7 @@ router.get("/auth/google/callback",
     failureRedirect: "/login-failure",
   }),
   (req, res) => {
-    res.redirect("http://localhost:5173/"); 
+    res.redirect("https://amazon-frontend-c2ki.onrender.com"); 
   }
 );
 
