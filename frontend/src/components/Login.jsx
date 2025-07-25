@@ -38,7 +38,7 @@ console.log(formData.email,formData.password);
 
      }
 const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:5000/auth/google";
+    window.location.href ="https://amazon-backend-i8vp.onrender.com/auth/google";
   };
 
 
