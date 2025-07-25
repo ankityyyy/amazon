@@ -13,6 +13,7 @@ import ProductEdit from './components/ProductEdit.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer.jsx'
+import ProtectedRoute from "./components/ProtectedRoute.jsx"
 
 
 function App() {
@@ -46,9 +47,11 @@ function App() {
             } 
           />
 
+
           <Route 
             path="/" 
             element={
+               <ProtectedRoute>
               <>
                 <NavBar />
                 <Panel />
@@ -56,8 +59,10 @@ function App() {
                 <Product />
                   <Footer/>
               </>
+              </ProtectedRoute>
             } 
           />
+         
 
           <Route 
             path="/product/:id" 
